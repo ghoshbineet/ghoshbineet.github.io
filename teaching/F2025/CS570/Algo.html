@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
@@ -205,303 +205,543 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
-html {
-	font-size: 19px;
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
 }
 
-html, body {
-	margin: auto;
-	background: #fefefe;
-	-webkit-font-smoothing: antialiased;
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
+
 body {
-	font-family: "Vollkorn", Palatino, Times;
-	color: #333;
-	line-height: 1.4;
-	text-align: justify;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
 }
 
 #write {
-	max-width: 960px;
-	margin: 0 auto;
-	margin-bottom: 2em;
-	line-height: 1.53;
-	padding-top: 40px;
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
 }
 
 @media only screen and (min-width: 1400px) {
 	#write {
-		max-width: 1100px;
+		max-width: 1024px;
 	}
 }
 
-@media print {
-	html {
-		font-size: 13px;
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
 	}
 }
 
-/* Typography
--------------------------------------------------------- */
-
-#write>h1:first-child,
-h1 {
-	margin-top: 1.6em;
-	font-weight: normal;
-}
-
-h1 {
-	font-size:3em;
-}
-
-h2 {
-	margin-top:2em;
-	font-weight: normal;
-}
-
-h3 {
-	font-weight: normal;
-	font-style: italic;
-	margin-top: 3em;
-}
-
-h1, 
-h2, 
-h3{
-	text-align: center;
-}
-
-h2:after{
-	border-bottom: 1px solid #2f2f2f;
-    content: '';
-    width: 100px;
-    display: block;
-    margin: 0 auto;
-    height: 1px;
-}
-
-h1+h2, h2+h3 {
-	margin-top: 0.83em;
-}
-
-p,
-.mathjax-block {
-	margin-top: 0;
-	-webkit-hypens: auto;
-	-moz-hypens: auto;
-	hyphens: auto;
-}
-ul {
-	list-style: square;
-	padding-left: 1.2em;
-}
-ol {
-	padding-left: 1.2em;
-}
-blockquote {
-	margin-left: 1em;
-	padding-left: 1em;
-	border-left: 1px solid #ddd;
-}
-code,
-pre {
-	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
-	font-size: .9em;
-	background: white;
-}
-.md-fences{
-	margin-left: 1em;
-	padding-left: 1em;
-	border: 1px solid #ddd;
-	padding-bottom: 8px;
-	padding-top: 6px;
-	margin-bottom: 1.5em;
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
 }
 
 a {
-	color: #2484c1;
-	text-decoration: none;
+    color: #4183C4;
 }
-a:hover {
-	text-decoration: underline;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
 }
-a img {
-	border: none;
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
 }
-h1 a,
-h1 a:hover {
-	color: #333;
-	text-decoration: none;
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
 }
 hr {
-	color: #ddd;
-	height: 1px;
-	margin: 2em 0;
-	border-top: solid 1px #ddd;
-	border-bottom: none;
-	border-left: 0;
-	border-right: 0;
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
 }
-.ty-table-edit {
-	background: #ededed;
-    padding-top: 4px;
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
 }
 table {
-	margin-bottom: 1.333333rem
+    padding: 0;
+    word-break: initial;
 }
-table th,
-table td {
-	padding: 8px;
-	line-height: 1.333333rem;
-	vertical-align: top;
-	border-top: 1px solid #ddd
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
 }
 table th {
-	font-weight: bold
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
 }
-table thead th {
-	vertical-align: bottom
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
 }
-table caption+thead tr:first-child th,
-table caption+thead tr:first-child td,
-table colgroup+thead tr:first-child th,
-table colgroup+thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-	border-top: 0
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
 }
-table tbody+tbody {
-	border-top: 2px solid #ddd
-}
-
-.task-list{
-	padding:0;
-}
-
-.md-task-list-item {
-	padding-left: 1.6rem;
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
 }
 
-.md-task-list-item > input:before {
-	content: '\221A';
-	display: inline-block;
-	width: 1.33333333rem;
-  	height: 1.6rem;
-	vertical-align: middle;
-	text-align: center;
-	color: #ddd;
-	background-color: #fefefe;
+.CodeMirror-lines {
+    padding-left: 4px;
 }
 
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	color: inherit;
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
 }
-.md-tag {
-	color: inherit;
-	font: inherit;
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
 }
 #write pre.md-meta-block {
-	min-height: 35px;
-	padding: 0.5em 1em;
-}
-#write pre.md-meta-block {
-	white-space: pre;
-	background: #f8f8f8;
-	border: 0px;
-	color: #999;
-	
-	width: 100vw;
-	max-width: calc(100% + 60px);
-	margin-left: -30px;
-	border-left: 30px #f8f8f8 solid;
-	border-right: 30px #f8f8f8 solid;
-
-	margin-bottom: 2em;
-	margin-top: -1.3333333333333rem;
-	padding-top: 26px;
-	padding-bottom: 10px;
-	line-height: 1.8em;
-	font-size: 0.9em;
-	font-size: 0.76em;
-	padding-left: 0;
-}
-.md-img-error.md-image>.md-meta{
-	vertical-align: bottom;
-}
-#write>h5.md-focus:before {
-	top: 2px;
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
 }
 
-.md-toc {
-	margin-top: 40px;
-}
-
-.md-toc-content {
-	padding-bottom: 20px;
-}
-
-.outline-expander:before {
-	color: inherit;
-	font-size: 14px;
-	top: auto;
-	content: "\f0da";
-	font-family: FontAwesome;
-}
-
-.outline-expander:hover:before,
-.outline-item-open>.outline-item>.outline-expander:before {
-  	content: "\f0d7";
-}
-
-/** source code mode */
-#typora-source {
-	font-family: Courier, monospace;
-    color: #6A6A6A;
-}
-
-.html-for-mac #typora-sidebar {
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-}
-
-.cm-s-typora-default .cm-header, 
-.cm-s-typora-default .cm-property,
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
-	color: #428bca;
-}
-
-.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
-	color: #777777;
-}
-
-.typora-node .file-list-item-parent-loc, 
-.typora-node .file-list-item-time, 
-.typora-node .file-list-item-summary {
-	font-family: arial, sans-serif;
-}
-
-.md-task-list-item>input {
-    margin-left: -1.3em;
-    margin-top: calc(1rem - 12px);
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
 }
 
 .md-mathjax-midline {
-	background: #fafafa;
+    background: #fafafa;
 }
 
-.md-fences .code-tooltip {
-	bottom: -2em !important;
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
 }
 
 .dropdown-menu .divider {
-	border-color: #e5e5e5;
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
 
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style><title>Algo</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='algorithms'><span>Algorithms</span></h1><p><strong><a href='https://bineet.cs.ua.edu/'><span>[Instructor Homepage]</span></a></strong></p><h2 id='general-course-information'><span>General Course Information</span></h2><ul><li><p><em><span>Term:</span></em><span> Fall 2025</span></p></li><li><p><em><span>Department</span></em><span>: COMP</span></p></li><li><p><em><span>Course Number:</span></em><span> 470/570</span></p></li><li><p><em><span>Time:</span></em><span> Mon/Wed/Fri, 9:00 am - 9:50 am</span></p></li><li><p><em><span>Location</span></em><span>: HM Comer 1026</span></p></li><li><p><em><span>Course Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html'><span>bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html</span></a></p></li></ul><h2 id='instructor'><span>Instructor </span></h2><p><strong><span>Dr. Bineet Ghosh</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:bineet@ua.edu' target='_blank' class='url'>bineet@ua.edu</a></p><ul><li><p><span>Please add the following in subject line if you are emailing regarding the course: </span><code>[f25-cs570] &lt;your-subject&gt;</code></p><ul><li><p><span>Note: Emails that do not adhere to this guideline may experience significant delays in response.</span></p></li></ul></li></ul></li><li><p><em><span>Office:</span></em><span> Cyber Hall 3053</span></p><ul><li><p><em><span>Office Hours:</span></em><span> Mon/Wed, 10:00 am - 11:00 am</span></p></li></ul></li><li><p><em><span>Instructor Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/'><span>bineet.cs.ua.edu</span></a></p></li></ul><h3 id='teaching-assistant'><span>Teaching Assistant</span></h3><p><strong><span>David Amebley</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:dkamebley@crimson.ua.edu' target='_blank' class='url'>dkamebley@crimson.ua.edu</a></p></li><li><p><em><span>Office Hours:</span></em><span> Tue/Thu, 10:00 am - 1:00 pm in CYB (Cyber Hall) 3046 </span></p></li></ul><h2 id='course-description'><span>Course Description</span></h2><p><span>This course will introduce students to the key concepts and techniques used to model, analyze, and reason about computational processes. Following are some of the broad topics that will be covered in this course:</span></p><ol start='' ><li><p><span>Analysis of Algorithms</span></p></li><li><p><span>Searching</span></p></li><li><p><span>Sorting</span></p></li><li><p><span>Graphs</span></p></li><li><p><span>Divide and Conquer</span></p></li><li><p><span>Greedy Algorithms</span></p></li><li><p><span>Dynamic Programming </span></p></li><li><p><span>Intractability</span></p></li></ol><h2 id='prerequisites'><span>Prerequisites</span></h2><ol start='' ><li><p><span>Algorithms (CS 201)</span></p></li><li><p><span>Data Structures and Analysis (eg., CS 201) </span></p></li><li><p><span>Discrete Structures (Or their equivalents).</span></p></li><li><p><span>Programming in Python (CS 223/323)</span></p></li><li><p><span>Mathematical Maturity</span></p><ul><li><p><span>Have you formally proved correctness of algorithms?</span></p></li><li><p><span>Are you familiar with proofs using induction?</span></p><ul><li><p><em><span>Test your knowledge of inductive proofs.</span></em><span> One can refer to basic inductive proofs (available online) and see how comfortable they are in understanding the proofs.</span></p></li></ul></li><li><p><span>Familiarity with theorems in graph theory would be useful</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ul></li></ol><p><strong><span>Speak to instructor, if unsure.</span></strong></p><h2 id='textbooks'><span>Textbooks</span></h2><p><span>Recommended textbooks:</span></p><ol start='' ><li><p><em><span>&quot;Algorithm Design&quot;</span></em><span>, by Jon Kleinberg, Eva Tardos </span><strong><span>(primary)</span></strong></p></li><li><p><em><span>&quot;Introduction to Algorithms&quot;</span></em><span>, by Thomas H Cormen, Charles E Leiserson, Ronald L Rivest, Clifford Stein</span></p></li></ol><h2 id='course-objectives'><span>Course Objectives</span></h2><p><span>By the end of this course students are expected to be able to:</span></p><ol start='' ><li><p><span>Understand and apply fundamental algorithm design paradigms.</span></p></li><li><p><span>Analyze algorithm performance using mathematical and empirical methods.</span></p></li><li><p><span>Prove algorithm correctness using formal reasoning.</span></p></li><li><p><span>Recognize and address computationally intractable problems.</span></p></li></ol><h2 id='student-learning-outcomes'><span>Student Learning Outcomes</span></h2><p><span>The students can test the above given objectives in the following way:</span></p><ol start='' ><li><p><span>Design and implement efficient algorithms in Python.</span></p></li><li><p><span>Analyze and compare algorithm efficiency using asymptotic notation.</span></p></li><li><p><span>Apply graph theory, dynamic programming, and greedy strategies to problem-solving.</span></p></li><li><p><span>Identify NP-hard problems and discuss their implications.</span></p></li></ol><h2 id='grading'><span>Grading </span></h2><ol start='' ><li><p><span>Assignments: 20%</span></p><ol start='' ><li><p><span>Must be typed (preferably in </span><code>LaTex</code><span>), and not handwritten. However hand-drawn figures (such as automata) are permitted.</span></p></li><li><p><span>Assignments will be clearly marked as graded/ungraded.</span></p></li><li><p><span>All submissions must follow this format: </span><code>&lt;firstname-lastname-CWID&gt;</code><span>.</span></p></li></ol></li><li><p><span>Quiz: 70%</span></p><ol start='' ><li><p><span>Quiz 1: 30%</span></p></li><li><p><span>Quiz 2: 40%</span></p></li></ol></li><li><p><span>Presentation (of topics/papers), and leading class discussion: 10%</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ol><p><strong><span>Late work policy</span></strong></p><ul><li><p><strong><span>No late assignments will be accepted or graded.</span></strong><span> All deadlines are firm.</span></p><ul><li><p><span>Extensions will only be granted for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies (e.g., medical note, university verification), in strict accordance with University policy.</span></p></li></ul></li></ul><p><strong><span>Missed quiz policy</span></strong></p><ul><li><p><span>Make-up exams will </span><strong><span>not</span></strong><span> be offered, except for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies.</span></p></li><li><p><span>In case of an emergency, the student must provide official documentation (e.g., medical note, university verification).</span></p></li><li><p><span>Failure to follow these guidelines will result in a score of zero for the missed exam.</span></p></li></ul><h2 id='attendance-and-participation'><span>Attendance and Participation</span></h2><ul><li><p><span>Though attendance will not be formally recorded, it is recommended the lectures are attended. </span></p></li><li><p><span>Students are responsible to make up for missed courseworks. </span></p></li></ul><h2 id='instructor-absence'><span>Instructor Absence</span></h2><p><span>On rare occasions, the instructor may be away from campus for professional commitments such as conferences, invited talks, or other academic obligations. During these instances, one of the following arrangements will be made:</span></p><ul><li><p><strong><span>Make-up Lecture:</span></strong><span> Scheduled on </span><strong><span>Thursday or Friday, 7:00–7:50 pm via Zoom</span></strong><span>. Attendance is optional, and a recording will be made available.</span></p></li><li><p><strong><span>In-class TA-led Session:</span></strong><span> The teaching assistant may cover course material or host an optional review session.</span></p></li><li><p><strong><span>In-class Practice Set:</span></strong><span> A set of sample practice questions will be provided and proctored by the TA. Attendance is optional, and will not be graded.</span></p></li></ul><p><em><strong><span>The instructor will provide advance notice of any such changes to the regular class schedule.</span></strong></em></p><h2 id='social-media-policy'><span>Social Media Policy</span></h2><p><span>In addition to official course announcements on Blackboard, the instructor will also post selected updates—such as important reminders, lecture highlights, and relevant resources—on the course’s social media channels:</span></p><ul><li><p><strong><span>Instagram:</span></strong><span> </span><a href='https://instagram.com/autmn_lab'><span>instagram.com/autmn_lab</span></a></p></li><li><p><strong><span>Facebook:</span></strong><span> </span><a href='https://facebook.com/autmn.lab'><span>facebook.com/autmn.lab</span></a></p></li></ul><p><span>Following these accounts is </span><strong><span>optional</span></strong><span> and not a substitute for regularly checking Blackboard. All critical information will be posted on Blackboard, and students are responsible for reviewing it in a timely manner.</span></p><p><strong><span>Communication Boundaries:</span></strong><span> Students should not send direct messages (DMs) to the instructor or TA via social media. All course-related communication must be conducted through </span><strong><span>University email</span></strong><span> using the guidelines provided above.</span></p><h2 id='disclaimer-notification-of-changes'><span>Disclaimer Notification of Changes</span></h2><p><span>The instructor will make every effort to follow the guidelines of this syllabus as listed; however, the instructor reserves the right to amend this document as the need arises (including project due dates and test dates). In such instances, the instructor will notify students in class and/or via email and will endeavor to provide reasonable time for students to adjust to any changes.</span></p><h2 id='standard-course-policies'><span>Standard Course Policies</span></h2><p><span>Please refer to the university&#39;s standard course policies (Honor code, misconduct, behavior etc.) for details.</span></p><h2 id='schedule'><span>Schedule</span></h2><p><strong><span>Please send me an email if you want the lecture slides</span></strong><span> (registered students can access the slides through Blackboard)</span></p><ul><li><p><strong><span>Lecture 1, Aug 20, 2025</span></strong></p><ul><li><p><span>Introduction to the course</span></p></li><li><p><span>Syllabus and logistics</span></p></li><li><p><strong><span>Self Evaluation Test is posted in Blackboard</span></strong><span>. Deadline: 6:00 am, Aug 27, 2025. This assignment is to test your prerequisites.</span></p></li><li><p><span>What&#39;s this course about? </span></p><ul><li><p><span>Designing algorithms?</span></p><ul><li><p><span>But I already write codes that work pretty well and are fast enough!</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>Lecture 2, Aug 22, 2025</span></strong></p><ul><li><p><span>Formalizing school multiplication</span></p></li><li><p><span>Introduction to Stable Matching</span></p></li></ul></li><li><p><strong><span>Lecture 3, Aug 25, 2025</span></strong></p><ul><li><p><span>Stable Matching (contd.)</span></p></li></ul></li><li><p><strong><span>Lecture 4, Aug 27, 2025</span></strong></p><ul><li><p><em><span>Self evaluation test due today.</span></em></p></li><li><p><span>Stable Matching</span></p><ul><li><p><span>Uniqueness of stable matching </span></p></li><li><p><span>Unstable pairs</span></p></li></ul></li><li><p><span>Are all algorithms equally good?</span></p></li></ul></li><li><p><strong><span>Lecture 5, Aug 29, 2025</span></strong></p><ul><li><p><span>Are all algorithms equally good?</span></p><ul><li><p><span>Contrasting Linear and Binary Search</span></p></li></ul></li><li><p><span>Introduction to asymptotic analysis</span></p></li></ul></li><li><p><strong><span>No Classes, Sep 1, 2025</span></strong></p><ul><li><p><span>Labor Day</span></p></li></ul><p>&nbsp;</p></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+<div id='write'  class=''><h1 id='algorithms'><span>Algorithms</span></h1><p><strong><a href='https://bineet.cs.ua.edu/'><span>[Instructor Homepage]</span></a></strong></p><h2 id='general-course-information'><span>General Course Information</span></h2><ul><li><p><em><span>Term:</span></em><span> Fall 2025</span></p></li><li><p><em><span>Department</span></em><span>: COMP</span></p></li><li><p><em><span>Course Number:</span></em><span> 470/570</span></p></li><li><p><em><span>Time:</span></em><span> Mon/Wed/Fri, 9:00 am - 9:50 am</span></p></li><li><p><em><span>Location</span></em><span>: HM Comer 1026</span></p></li><li><p><em><span>Course Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html'><span>bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html</span></a></p></li></ul><h2 id='instructor'><span>Instructor </span></h2><p><strong><span>Dr. Bineet Ghosh</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:bineet@ua.edu' target='_blank' class='url'>bineet@ua.edu</a></p><ul><li><p><span>Please add the following in subject line if you are emailing regarding the course: </span><code>[f25-cs570] &lt;your-subject&gt;</code></p><ul><li><p><span>Note: Emails that do not adhere to this guideline may experience significant delays in response.</span></p></li></ul></li></ul></li><li><p><em><span>Office:</span></em><span> Cyber Hall 3053</span></p><ul><li><p><em><span>Office Hours:</span></em><span> Mon/Wed, 10:00 am - 11:00 am</span></p></li></ul></li><li><p><em><span>Instructor Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/'><span>bineet.cs.ua.edu</span></a></p></li></ul><h3 id='teaching-assistant'><span>Teaching Assistant</span></h3><p><strong><span>David Amebley</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:dkamebley@crimson.ua.edu' target='_blank' class='url'>dkamebley@crimson.ua.edu</a></p></li><li><p><em><span>Office Hours:</span></em><span> Tue/Thu, 10:00 am - 1:00 pm in CYB (Cyber Hall) 3046 </span></p></li></ul><h2 id='course-description'><span>Course Description</span></h2><p><span>This course will introduce students to the key concepts and techniques used to model, analyze, and reason about computational processes. Following are some of the broad topics that will be covered in this course:</span></p><ol start='' ><li><p><span>Analysis of Algorithms</span></p></li><li><p><span>Searching</span></p></li><li><p><span>Sorting</span></p></li><li><p><span>Graphs</span></p></li><li><p><span>Divide and Conquer</span></p></li><li><p><span>Greedy Algorithms</span></p></li><li><p><span>Dynamic Programming </span></p></li><li><p><span>Intractability</span></p></li></ol><h2 id='prerequisites'><span>Prerequisites</span></h2><ol start='' ><li><p><span>Algorithms (CS 201)</span></p></li><li><p><span>Data Structures and Analysis (eg., CS 201) </span></p></li><li><p><span>Discrete Structures (Or their equivalents).</span></p></li><li><p><span>Programming in Python (CS 223/323)</span></p></li><li><p><span>Mathematical Maturity</span></p><ul><li><p><span>Have you formally proved correctness of algorithms?</span></p></li><li><p><span>Are you familiar with proofs using induction?</span></p><ul><li><p><em><span>Test your knowledge of inductive proofs.</span></em><span> One can refer to basic inductive proofs (available online) and see how comfortable they are in understanding the proofs.</span></p></li></ul></li><li><p><span>Familiarity with theorems in graph theory would be useful</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ul></li></ol><p><strong><span>Speak to instructor, if unsure.</span></strong></p><h2 id='textbooks'><span>Textbooks</span></h2><p><span>Recommended textbooks:</span></p><ol start='' ><li><p><em><span>&quot;Algorithm Design&quot;</span></em><span>, by Jon Kleinberg, Eva Tardos </span><strong><span>(primary)</span></strong></p></li><li><p><em><span>&quot;Introduction to Algorithms&quot;</span></em><span>, by Thomas H Cormen, Charles E Leiserson, Ronald L Rivest, Clifford Stein</span></p></li></ol><h2 id='course-objectives'><span>Course Objectives</span></h2><p><span>By the end of this course students are expected to be able to:</span></p><ol start='' ><li><p><span>Understand and apply fundamental algorithm design paradigms.</span></p></li><li><p><span>Analyze algorithm performance using mathematical and empirical methods.</span></p></li><li><p><span>Prove algorithm correctness using formal reasoning.</span></p></li><li><p><span>Recognize and address computationally intractable problems.</span></p></li></ol><h2 id='student-learning-outcomes'><span>Student Learning Outcomes</span></h2><p><span>The students can test the above given objectives in the following way:</span></p><ol start='' ><li><p><span>Design and implement efficient algorithms in Python.</span></p></li><li><p><span>Analyze and compare algorithm efficiency using asymptotic notation.</span></p></li><li><p><span>Apply graph theory, dynamic programming, and greedy strategies to problem-solving.</span></p></li><li><p><span>Identify NP-hard problems and discuss their implications.</span></p></li></ol><h2 id='grading'><span>Grading </span></h2><ol start='' ><li><p><span>Assignments: 20%</span></p><ol start='' ><li><p><span>Must be typed (preferably in </span><code>LaTex</code><span>), and not handwritten. However hand-drawn figures (such as automata) are permitted.</span></p></li><li><p><span>Assignments will be clearly marked as graded/ungraded.</span></p></li><li><p><span>All submissions must follow this format: </span><code>&lt;firstname-lastname-CWID&gt;</code><span>.</span></p></li></ol></li><li><p><span>Quiz: 70%</span></p><ol start='' ><li><p><span>Quiz 1: 30%</span></p></li><li><p><span>Quiz 2: 40%</span></p></li></ol></li><li><p><span>Presentation (of topics/papers), and leading class discussion: 10%</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ol><p><strong><span>Late work policy</span></strong></p><ul><li><p><strong><span>No late assignments will be accepted or graded.</span></strong><span> All deadlines are firm.</span></p><ul><li><p><span>Extensions will only be granted for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies (e.g., medical note, university verification), in strict accordance with University policy.</span></p></li></ul></li></ul><p><strong><span>Missed quiz policy</span></strong></p><ul><li><p><span>Make-up exams will </span><strong><span>not</span></strong><span> be offered, except for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies.</span></p></li><li><p><span>In case of an emergency, the student must provide official documentation (e.g., medical note, university verification).</span></p></li><li><p><span>Failure to follow these guidelines will result in a score of zero for the missed exam.</span></p></li></ul><h2 id='attendance-and-participation'><span>Attendance and Participation</span></h2><ul><li><p><span>Though attendance will not be formally recorded, it is recommended the lectures are attended. </span></p></li><li><p><span>Students are responsible to make up for missed courseworks. </span></p></li></ul><h2 id='instructor-absence'><span>Instructor Absence</span></h2><p><span>On rare occasions, the instructor may be away from campus for professional commitments such as conferences, invited talks, or other academic obligations. During these instances, one of the following arrangements will be made:</span></p><ul><li><p><strong><span>Make-up Lecture:</span></strong><span> Scheduled on </span><strong><span>Thursday or Friday, 7:00–7:50 pm via Zoom</span></strong><span>. Attendance is optional, and a recording will be made available.</span></p></li><li><p><strong><span>In-class TA-led Session:</span></strong><span> The teaching assistant may cover course material or host an optional review session.</span></p></li><li><p><strong><span>In-class Practice Set:</span></strong><span> A set of sample practice questions will be provided and proctored by the TA. Attendance is optional, and will not be graded.</span></p></li></ul><p><em><strong><span>The instructor will provide advance notice of any such changes to the regular class schedule.</span></strong></em></p><h2 id='social-media-policy'><span>Social Media Policy</span></h2><p><span>In addition to official course announcements on Blackboard, the instructor will also post selected updates—such as important reminders, lecture highlights, and relevant resources—on the course’s social media channels:</span></p><ul><li><p><strong><span>Instagram:</span></strong><span> </span><a href='https://instagram.com/autmn_lab'><span>instagram.com/autmn_lab</span></a></p></li><li><p><strong><span>Facebook:</span></strong><span> </span><a href='https://facebook.com/autmn.lab'><span>facebook.com/autmn.lab</span></a></p></li></ul><p><span>Following these accounts is </span><strong><span>optional</span></strong><span> and not a substitute for regularly checking Blackboard. All critical information will be posted on Blackboard, and students are responsible for reviewing it in a timely manner.</span></p><p><strong><span>Communication Boundaries:</span></strong><span> Students should not send direct messages (DMs) to the instructor or TA via social media. All course-related communication must be conducted through </span><strong><span>University email</span></strong><span> using the guidelines provided above.</span></p><h2 id='disclaimer-notification-of-changes'><span>Disclaimer Notification of Changes</span></h2><p><span>The instructor will make every effort to follow the guidelines of this syllabus as listed; however, the instructor reserves the right to amend this document as the need arises (including project due dates and test dates). In such instances, the instructor will notify students in class and/or via email and will endeavor to provide reasonable time for students to adjust to any changes.</span></p><h2 id='standard-course-policies'><span>Standard Course Policies</span></h2><p><span>Please refer to the university&#39;s standard course policies (Honor code, misconduct, behavior etc.) for details.</span></p><h2 id='schedule'><span>Schedule</span></h2><p><strong><span>Please send me an email if you want the lecture slides</span></strong><span> (registered students can access the slides through Blackboard)</span></p><ul><li><p><strong><span>Lecture 1, Aug 20, 2025</span></strong></p><ul><li><p><span>Introduction to the course</span></p></li><li><p><span>Syllabus and logistics</span></p></li><li><p><strong><span>Self Evaluation Test is posted in Blackboard</span></strong><span>. Deadline: 6:00 am, Aug 27, 2025. This assignment is to test your prerequisites.</span></p></li><li><p><span>What&#39;s this course about? </span></p><ul><li><p><span>Designing algorithms?</span></p><ul><li><p><span>But I already write codes that work pretty well and are fast enough!</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>Lecture 2, Aug 22, 2025</span></strong></p><ul><li><p><span>Formalizing school multiplication</span></p></li><li><p><span>Introduction to Stable Matching</span></p></li></ul></li><li><p><strong><span>Lecture 3, Aug 25, 2025</span></strong></p><ul><li><p><span>Stable Matching (contd.)</span></p></li></ul></li><li><p><strong><span>Lecture 4, Aug 27, 2025</span></strong></p><ul><li><p><em><span>Self evaluation test due today.</span></em></p></li><li><p><span>Stable Matching</span></p><ul><li><p><span>Uniqueness of stable matching </span></p></li><li><p><span>Unstable pairs</span></p></li></ul></li><li><p><span>Are all algorithms equally good?</span></p></li></ul></li><li><p><strong><span>Lecture 5, Aug 29, 2025</span></strong></p><ul><li><p><span>Are all algorithms equally good?</span></p><ul><li><p><span>Contrasting Linear and Binary Search</span></p></li></ul></li><li><p><span>Introduction to asymptotic analysis</span></p></li></ul></li><li><p><strong><span>No Classes, Sep 1, 2025</span></strong></p><ul><li><p><span>Labor Day</span></p></li></ul></li><li><p><strong><span>Lecture 6, Sep 3, 2025</span></strong></p><ul><li><p><span>Asymptotic complexities</span></p></li><li><p><span>How do you choose the input size?</span></p><ul><li><p><span>Arrays</span></p></li><li><p><span>Graphs</span></p></li><li><p><span>For </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-2-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-2-TEX-I-1D45B"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">n</script><span>, say for checking prime?</span></p></li></ul></li></ul><p>&nbsp;</p></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
 </body>
 </html>
