@@ -205,1185 +205,298 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
-:root {
-  --mermaid-theme: night;
-}
-
-[lang='mermaid'] .label {
-  color: #333;
-}
-
-/* CSS Document */
-
-/** code highlight */
-
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-operator,
-.cm-s-inner .cm-property {
-    color: #b8bfc6;
-}
-
-.cm-s-inner .cm-keyword {
-    color: #C88FD0;
-}
-
-.cm-s-inner .cm-tag {
-    color: #7DF46A;
-}
-
-.cm-s-inner .cm-attribute {
-    color: #7575E4;
-}
-
-.CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid #b8bfc6;
-    z-index: 3;
-}
-
-.cm-s-inner .cm-string {
-    color: #D26B6B;
-}
-
-.cm-s-inner .cm-comment,
-.cm-s-inner.cm-comment {
-    color: #DA924A;
-}
-
-.cm-s-inner .cm-header,
-.cm-s-inner .cm-def,
-.cm-s-inner.cm-header,
-.cm-s-inner.cm-def {
-    color: #8d8df0;
-}
-
-.cm-s-inner .cm-quote,
-.cm-s-inner.cm-quote {
-    color: #57ac57;
-}
-
-.cm-s-inner .cm-hr {
-    color: #d8d5d5;
-}
-
-.cm-s-inner .cm-link {
-    color: #d3d3ef;
-}
-
-.cm-s-inner .cm-negative {
-    color: #d95050;
-}
-
-.cm-s-inner .cm-positive {
-    color: #50e650;
-}
-
-.cm-s-inner .cm-string-2 {
-    color: #f50;
-}
-
-.cm-s-inner .cm-meta,
-.cm-s-inner .cm-qualifier {
-    color: #b7b3b3;
-}
-
-.cm-s-inner .cm-builtin {
-    color: #f3b3f8;
-}
-
-.cm-s-inner .cm-bracket {
-    color: #997;
-}
-
-.cm-s-inner .cm-atom,
-.cm-s-inner.cm-atom {
-    color: #84B6CB;
-}
-
-.cm-s-inner .cm-number {
-    color: #64AB8F;
-}
-
-.cm-s-inner .cm-variable {
-    color: #b8bfc6;
-}
-
-.cm-s-inner .cm-variable-2 {
-    color: #9FBAD5;
-}
-
-.cm-s-inner .cm-variable-3 {
-    color: #1cc685;
-}
-
-.CodeMirror-selectedtext,
-.CodeMirror-selected {
-    background: #4a89dc;
-    color: #fff !important;
-    text-shadow: none;
-}
-
-.CodeMirror-gutters {
-    border-right: none;
-}
-
-/* CSS Document */
-
-/** markdown source **/
-.cm-s-typora-default .cm-header, 
-.cm-s-typora-default .cm-property
-{
-    color: #cebcca;
-}
-
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
-    border-left: 3px solid #b8bfc6;
-}
-
-.cm-s-typora-default .cm-comment {
-    color: #9FB1FF;
-}
-
-.cm-s-typora-default .cm-string {
-    color: #A7A7D9
-}
-
-.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
-    color: #848695;
-    font-style: italic;
-}
-
-.cm-s-typora-default .cm-link {
-    color: #95B94B;
-}
-
-.cm-s-typora-default .CodeMirror-activeline-background {
-    background: rgba(51, 51, 51, 0.72);
-}
-
-.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
-	color: #8aa1e1;
-}@import "";
-@import "";
-@import "";
-
-:root {
-    --bg-color:  #363B40;
-    --side-bar-bg-color: #2E3033;
-    --text-color: #b8bfc6;
-
-    --select-text-bg-color:#4a89dc;
-
-    --item-hover-bg-color: #0a0d16;
-    --control-text-color: #b7b7b7;
-    --control-text-hover-color: #eee;
-    --window-border: 1px solid #555;
-
-    --active-file-bg-color: rgb(34, 34, 34);
-    --active-file-border-color: #8d8df0;
-
-    --primary-color: #a3d5fe;
-
-    --active-file-text-color: white;
-    --item-hover-bg-color: #70717d;
-    --item-hover-text-color: white;
-    --primary-color: #6dc1e7;
-
-    --rawblock-edit-panel-bd: #333;
-
-    --search-select-bg-color: #428bca;
-}
-
 html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+	font-size: 19px;
 }
 
-html,
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
 body {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    background: #363B40;
-    background: var(--bg-color);
-    fill: currentColor;
-    line-height: 1.625rem;
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
 }
 
 #write {
-    max-width: 914px;
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
 }
-
 
 @media only screen and (min-width: 1400px) {
 	#write {
-		max-width: 1024px;
+		max-width: 1100px;
 	}
 }
 
-@media only screen and (min-width: 1800px) {
-	#write {
-		max-width: 1200px;
+@media print {
+	html {
+		font-size: 13px;
 	}
 }
 
-html,
-body,
-button,
-input,
-select,
-textarea,
-div.code-tooltip-content {
-    color: #b8bfc6;
-    border-color: transparent;
-}
+/* Typography
+-------------------------------------------------------- */
 
-div.code-tooltip,
-.md-hover-tip .md-arrow:after {
-    background: #333;
-}
-
-.native-window #md-notification {
-    border: 1px solid #70717d;
-}
-
-.popover.bottom > .arrow:after {
-    border-bottom-color: #333;
-}
-
-html,
-body,
-button,
-input,
-select,
-textarea {
-    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-}
-
-hr {
-    height: 2px;
-    border: 0;
-    margin: 24px 0 !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Lucida Grande", "Corbel", sans-serif;
-    font-weight: normal;
-    clear: both;
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-    margin: 0;
-    padding: 0;
-    color: #DEDEDE
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
 }
 
 h1 {
-    font-size: 2.5rem;
-    /* 36px */
-    line-height: 2.75rem;
-    /* 40px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1.5px;
+	font-size:3em;
 }
 
 h2 {
-    font-size: 1.63rem;
-    /* 24px */
-    line-height: 1.875rem;
-    /* 30px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1px;
-    font-weight: bold;
+	margin-top:2em;
+	font-weight: normal;
 }
 
 h3 {
-    font-size: 1.17rem;
-    /* 18px */
-    line-height: 1.5rem;
-    /* 24px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1px;
-    font-weight: bold;
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
 }
 
-h4 {
-    font-size: 1.12rem;
-    /* 16px */
-    line-height: 1.375rem;
-    /* 22px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    color: white;
+h1, 
+h2, 
+h3{
+	text-align: center;
 }
 
-h5 {
-    font-size: 0.97rem;
-    /* 16px */
-    line-height: 1.25rem;
-    /* 22px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    font-weight: bold;
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
 }
 
-h6 {
-    font-size: 0.93rem;
-    /* 16px */
-    line-height: 1rem;
-    /* 16px */
-    margin-bottom: 0.75rem;
-    color: white;
-}
-
-@media (min-width: 980px) {
-    h3.md-focus:before,
-    h4.md-focus:before,
-    h5.md-focus:before,
-    h6.md-focus:before {
-        color: #ddd;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        position: absolute;
-        left: -1.642857143rem;
-        top: .357142857rem;
-        float: left;
-        font-size: 9px;
-        padding-left: 2px;
-        padding-right: 2px;
-        vertical-align: bottom;
-        font-weight: normal;
-        line-height: normal;
-    }
-
-    h3.md-focus:before {
-        content: 'h3';
-    }
-
-    h4.md-focus:before {
-        content: 'h4';
-    }
-
-    h5.md-focus:before {
-        content: 'h5';
-        top: 0px;
-    }
-
-    h6.md-focus:before {
-        content: 'h6';
-        top: 0px;
-    }
-}
-
-a {
-    text-decoration: none;
-    outline: 0;
-}
-
-a:hover {
-    outline: 0;
-}
-
-a:focus {
-    outline: thin dotted;
-}
-
-sup.md-footnote {
-    background-color: #555;
-    color: #ddd;
-}
-
-p {
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
 }
 
 p,
-ul,
-dd,
-ol,
-hr,
-address,
-pre,
-table,
-iframe,
-.wp-caption,
-.wp-audio-shortcode,
-.wp-video-shortcode {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    /* 24px */
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
 }
-
-audio:not([controls]) {
-    display: none;
-}
-
-[hidden] {
-    display: none;
-}
-
-::-moz-selection {
-    background: #4a89dc;
-    color: #fff;
-    text-shadow: none;
-}
-
-*.in-text-selection,
-::selection {
-    background: #4a89dc;
-    color: #fff;
-    text-shadow: none;
-}
-
-ul,
-ol {
-    padding: 0 0 0 1.875rem;
-    /* 30px */
-}
-
 ul {
-    list-style: square;
+	list-style: square;
+	padding-left: 1.2em;
 }
-
 ol {
-    list-style: decimal;
+	padding-left: 1.2em;
 }
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-    margin: 0;
-}
-
-b,
-th,
-dt,
-strong {
-    font-weight: bold;
-}
-
-i,
-em,
-dfn,
-cite {
-    font-style: italic;
-}
-
 blockquote {
-    padding-left: 1.875rem;
-    margin: 0 0 1.875rem 1.875rem;
-    border-left: solid 2px #474d54;
-    padding-left: 30px;
-    margin-top: 35px;
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
 }
-
-pre,
 code,
-kbd,
-tt,
-var {
-    font-size: 0.875em;
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
 }
-
-code,
-tt,
-var {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-kbd {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #fff;
-    background-color: #333;
-    border-radius: 3px;
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-}
-
-pre.md-fences {
-    padding: 10px 10px 10px 30px;
-    margin-bottom: 20px;
-    background: #333;
-}
-
-.CodeMirror-gutters {
-    background: #333;
-    border-right: 1px solid transparent;
-}
-
-.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
-    bottom: -2.2em;
-    right: 4px;
-}
-
-code,
-kbd,
-tt,
-var {
-    padding: 2px 5px;
-}
-
-table {
-    max-width: 100%;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-th,
-td {
-    padding: 5px 10px;
-    vertical-align: top;
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
 }
 
 a {
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+	color: #2484c1;
+	text-decoration: none;
 }
-
-hr {
-    background: #474d54;
-    /* variable */
-}
-
-h1 {
-    margin-top: 2em;
-}
-
-a {
-    color: #e0e0e0;
-    text-decoration: underline;
-}
-
 a:hover {
-    color: #fff;
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
 }
 
-.md-inline-math script {
-    color: #81b1db;
-}
-
-b,
-th,
-dt,
-strong {
-    color: #DEDEDE;
-    /* variable */
-}
-
-mark {
-    background: #D3D40E;
-}
-
-blockquote {
-    color: #9DA2A6;
-}
-
-table a {
-    color: #DEDEDE;
-    /* variable */
-}
-
-th,
-td {
-    border: solid 1px #474d54;
-    /* variable */
-}
-
-.task-list {
-    padding-left: 0;
+.task-list{
+	padding:0;
 }
 
 .md-task-list-item {
-    padding-left: 1.25rem;
-}
-
-.md-task-list-item > input {
-    top: auto;
+	padding-left: 1.6rem;
 }
 
 .md-task-list-item > input:before {
-    content: "";
-    display: inline-block;
-    width: 0.875rem;
-    height: 0.875rem;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid #b8bfc6;
-    background-color: #363B40;
-    margin-top: -0.4rem;
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
 }
 
 .md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before {
-    content: '\221A';
-    /*◘*/
-    font-size: 0.625rem;
-    line-height: 0.625rem;
-    color: #DEDEDE;
+.md-task-list-item > input[checked]:before{
+	color: inherit;
 }
-
-/** quick open **/
-.auto-suggest-container {
-    border: 0px;
-    background-color: #525C65;
+.md-tag {
+	color: inherit;
+	font: inherit;
 }
-
-#typora-quick-open {
-    background-color: #525C65;
-}
-
-#typora-quick-open input{
-    background-color: #525C65;
-    border: 0;
-    border-bottom: 1px solid grey;
-}
-
-.typora-quick-open-item {
-    background-color: inherit;
-    color: inherit;
-}
-
-.typora-quick-open-item.active,
-.typora-quick-open-item:hover {
-    background-color: #4D8BDB;
-    color: white;
-}
-
-.typora-quick-open-item:hover {
-    background-color: rgba(77, 139, 219, 0.8);
-}
-
-.typora-search-spinner > div {
-  background-color: #fff;
-}
-
 #write pre.md-meta-block {
-    border-bottom: 1px dashed #ccc;
-    background: transparent;
-    padding-bottom: 0.6em;
-    line-height: 1.6em;
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
 }
 
-.btn,
-.btn .btn-default {
-    background: transparent;
-    color: #b8bfc6;
+.md-toc {
+	margin-top: 40px;
 }
 
-.ty-table-edit {
-    border-top: 1px solid gray;
-    background-color: #363B40;
-}
-
-.popover-title {
-    background: transparent;
-}
-
-.md-image>.md-meta {
-    color: #BBBBBB;
-    background: transparent;
-}
-
-.md-expand.md-image>.md-meta {
-    color: #DDD;
-}
-
-#write>h3:before,
-#write>h4:before,
-#write>h5:before,
-#write>h6:before {
-    border: none;
-    border-radius: 0px;
-    color: #888;
-    text-decoration: underline;
-    left: -1.4rem;
-    top: 0.2rem;
-}
-
-#write>h3.md-focus:before {
-    top: 2px;
-}
-
-#write>h4.md-focus:before {
-    top: 2px;
-}
-
-.md-toc-item {
-    color: #A8C2DC;
-}
-
-#write div.md-toc-tooltip {
-    background-color: #363B40;
-}
-
-.dropdown-menu .btn:hover,
-.dropdown-menu .btn:focus,
-.md-toc .btn:hover,
-.md-toc .btn:focus {
-    color: white;
-    background: black;
-}
-
-#toc-dropmenu {
-    background: rgba(50, 54, 59, 0.93);
-    border: 1px solid rgba(253, 253, 253, 0.15);
-}
-
-#toc-dropmenu .divider {
-    background-color: #9b9b9b;
+.md-toc-content {
+	padding-bottom: 20px;
 }
 
 .outline-expander:before {
-    top: 2px;
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
 }
 
-#typora-sidebar {
-    box-shadow: none;
-    border-right: 1px dashed;
-    border-right: none;
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
 }
 
-.sidebar-tabs {
-    border-bottom:0;
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
 }
 
-#typora-sidebar:hover .outline-title-wrapper {
-    border-left: 1px dashed;
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-.outline-title-wrapper .btn {
-    color: inherit;
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
 }
 
-.outline-item:hover {
-    border-color: #363B40;
-    background-color: #363B40;
-    color: white;
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
 }
 
-h1.md-focus .md-attr,
-h2.md-focus .md-attr,
-h3.md-focus .md-attr,
-h4.md-focus .md-attr,
-h5.md-focus .md-attr,
-h6.md-focus .md-attr,
-.md-header-span .md-attr {
-    color: #8C8E92;
-    display: inline;
-}
-
-.md-comment {
-    color: #5a95e3;
-    opacity: 0.8;
-}
-
-.md-inline-math svg {
-    color: #b8bfc6;
-}
-
-#math-inline-preview .md-arrow:after {
-    background: black;
-}
-
-.modal-content {
-    background: var(--bg-color);
-    border: 0;
-}
-
-.modal-title {
-    font-size: 1.5em;
-}
-
-.modal-content input {
-    background-color: rgba(26, 21, 21, 0.51);
-    color: white;
-}
-
-.modal-content .input-group-addon {
-    color: white;
-}
-
-.modal-backdrop {
-    background-color: rgba(174, 174, 174, 0.7);
-}
-
-.modal-content .btn-primary {
-    border-color: var(--primary-color);
-}
-
-.md-table-resize-popover {
-    background-color: #333;
-}
-
-.form-inline .input-group .input-group-addon {
-    color: white;
-}
-
-#md-searchpanel {
-    border-bottom: 1px dashed grey;
-}
-
-/** UI for electron */
-
-.context-menu,
-#spell-check-panel,
-#footer-word-count-info {
-    background-color: #42464A;
-}
-
-.context-menu.dropdown-menu .divider,
-.dropdown-menu .divider {
-    background-color: #777777;
-    opacity: 1;
-}
-
-footer {
-    color: inherit;
-}
-
-@media (max-width: 1000px) {
-    footer {
-        border-top: none;
-    }
-    footer:hover {
-        color: inherit;
-    }
-}
-
-#file-info-file-path .file-info-field-value:hover {
-    background-color: #555;
-    color: #dedede;
-}
-
-.megamenu-content,
-.megamenu-opened header {
-    background: var(--bg-color);
-}
-
-.megamenu-menu-panel h2,
-.megamenu-menu-panel h1,
-.long-btn {
-    color: inherit;
-}
-
-.megamenu-menu-panel input[type='text'] {
-    background: inherit;
-    border: 0;
-    border-bottom: 1px solid;
-}
-
-#recent-file-panel-action-btn {
-    background: inherit;
-    border: 1px grey solid;
-}
-
-.megamenu-menu-panel .dropdown-menu > li > a {
-    color: inherit;
-    background-color: #2F353A;
-    text-decoration: none;
-}
-
-.megamenu-menu-panel table td:nth-child(1) {
-    color: inherit;
-    font-weight: bold;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
-    color: white;
-}
-
-.modal-footer .btn-default, 
-.modal-footer .btn-primary,
-.modal-footer .btn-default:not(:hover) {
-    border: 1px solid;
-    border-color: transparent;
-}
-
-.btn-primary {
-    color: white;
-}
-
-.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-    color: white;
-    border: 1px solid #ddd;
-    background-color: inherit;
-}
-
-.modal-header {
-    border-bottom: 0;
-}
-
-.modal-footer {
-    border-top: 0;
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: transparent !important;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
-    color: inherit;
-}
-
-.megamenu-menu-panel .btn {
-    border: 1px solid #eee;
-    background: transparent;
-}
-
-.mouse-hover .toolbar-icon.btn:hover,
-#w-full.mouse-hover,
-#w-pin.mouse-hover {
-    background-color: inherit;
-}
-
-.typora-node::-webkit-scrollbar {
-    width: 5px;
-}
-
-.typora-node::-webkit-scrollbar-thumb:vertical {
-    background: rgba(250, 250, 250, 0.3);
-}
-
-.typora-node::-webkit-scrollbar-thumb:vertical:active {
-    background: rgba(250, 250, 250, 0.5);
-}
-
-#w-unpin {
-    background-color: #4182c4;
-}
-
-#top-titlebar, #top-titlebar * {
-    color: var(--item-hover-text-color);
-}
-
-.typora-sourceview-on #toggle-sourceview-btn,
-#footer-word-count:hover,
-.ty-show-word-count #footer-word-count {
-    background: #333333;
-}
-
-#toggle-sourceview-btn:hover {
-    color: #eee;
-    background: #333333;
-}
-
-/** focus mode */
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
-    color: #686868 !important;
-}
-
-.on-focus-mode .md-end-block:not(.md-focus) img,
-.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
-    opacity: #686868 !important;
-}
-
-.on-focus-mode li[cid]:not(.md-focus-container){
-    color: #686868;
-}
-
-.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
-.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
-    color: #686868 !important;
-}
-
-.on-focus-mode .md-focus,
-.on-focus-mode .md-focus-container {
-    color: #fff;
-}
-
-.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
-    color: #686868 !important;
-}
-
-
-/*diagrams*/
-#write .md-focus .md-diagram-panel {
-    border: 1px solid #ddd;
-    margin-left: -1px;
-    width: calc(100% + 2px);
-}
-
-/*diagrams*/
-#write .md-focus.md-fences-with-lineno .md-diagram-panel {
-    margin-left: auto;
-}
-
-.md-diagram-panel-error {
-    color: #f1908e;
-}
-
-.active-tab-files #info-panel-tab-file,
-.active-tab-files #info-panel-tab-file:hover,
-.active-tab-outline #info-panel-tab-outline,
-.active-tab-outline #info-panel-tab-outline:hover {
-    color: #eee;
-}
-
-.sidebar-footer-item:hover,
-.footer-item:hover {
-    background: inherit;
-    color: white;
-}
-
-.ty-side-sort-btn.active,
-.ty-side-sort-btn:hover,
-.selected-folder-menu-item a:after {
-    color: white;
-}
-
-#sidebar-files-menu {
-    border:solid 1px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
-    background-color: var(--bg-color);
-}
-
-.file-list-item {
-    border-bottom:none;
-}
-
-.file-list-item-summary {
-    opacity: 1;
-}
-
-.file-list-item.active:first-child {
-    border-top: none;
-}
-
-.file-node-background {
-    height: 32px;
-}
-
-.file-library-node.active>.file-node-content,
-.file-list-item.active {
-    color: white;
-    color: var(--active-file-text-color);
-}
-
-.file-library-node.active>.file-node-background{
-    background-color: rgb(34, 34, 34);
-    background-color: var(--active-file-bg-color);
-}
-.file-list-item.active {
-    background-color: rgb(34, 34, 34);
-    background-color: var(--active-file-bg-color);
-}
-
-#ty-tooltip {
-    background-color: black;
-    color: #eee;
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
 }
 
 .md-task-list-item>input {
     margin-left: -1.3em;
-    margin-top: 0.3rem;
-    -webkit-appearance: none;
+    margin-top: calc(1rem - 12px);
 }
 
 .md-mathjax-midline {
-    background-color: #57616b;
-    border-bottom: none;
+	background: #fafafa;
 }
 
-footer.ty-footer {
-    border-color: #656565;
+.md-fences .code-tooltip {
+	bottom: -2em !important;
 }
 
-.ty-preferences .btn-default {
-    background: transparent;
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
 }
-.ty-preferences .btn-default:hover {
-    background: #57616b;
-}
-
-.ty-preferences select {
-    border: 1px solid #989698;
-    height: 21px;
-}
-
-.ty-preferences .nav-group-item.active,
-.export-item.active,
-.export-items-list-control,
-.export-detail {
-    background: var(--item-hover-bg-color);
-}
-
-.ty-preferences input[type="search"] {
-    border-color: #333;
-    background: #333;
-    line-height: 22px;
-    border-radius: 6px;
-    color: white;
-}
-
-.ty-preferences input[type="search"]:focus {
-    box-shadow: none;
-}
-
-[data-is-directory="true"] .file-node-content {
-    margin-bottom: 0;
-}
-
-.file-node-title {
-    line-height: 22px;
-}
-
-.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
-    line-height: 26px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(230, 230, 230, 0.30);
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: rgba(230, 230, 230, 0.50);
-}
-
-#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
-    background: rgba(230, 230, 230, 0.30);
-}
-
-.nav-group-item:active {
-    background-color: #474d54 !important;
-}
-
-.md-search-hit {
-    background: rgba(199, 140, 60, 0.81);
-    color: #eee;
-}
-
-.md-search-hit * {
-    color: #eee;
-}
-
-#md-searchpanel input {
-    color: white;
-}
-
-.modal-backdrop.in {
-    opacity: 1;
-    backdrop-filter: blur(1px);
-}
-
-.clear-btn-icon {
-    top: 8px;
-}
-
-/* try fix https://github.com/typora/typora-issues/issues/5253 */
-.file-node-expanded>.file-node-children {
-    display: grid;
-  }
 
 
 mjx-container[jax="SVG"] {
@@ -1538,6 +651,6 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
 <div id='write'  class=''><h1 id='algorithms'><span>Algorithms</span></h1><p><strong><a href='https://bineet.cs.ua.edu/'><span>[Instructor Homepage]</span></a></strong></p><h2 id='general-course-information'><span>General Course Information</span></h2><ul><li><p><em><span>Term:</span></em><span> Fall 2025</span></p></li><li><p><em><span>Department</span></em><span>: COMP</span></p></li><li><p><em><span>Course Number:</span></em><span> 470/570</span></p></li><li><p><em><span>Time:</span></em><span> Mon/Wed/Fri, 9:00 am - 9:50 am</span></p></li><li><p><em><span>Location</span></em><span>: HM Comer 1026</span></p></li><li><p><em><span>Course Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html'><span>bineet.cs.ua.edu/teaching/F2025/CS570/Algo.html</span></a></p></li></ul><h2 id='instructor'><span>Instructor </span></h2><p><strong><span>Dr. Bineet Ghosh</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:bineet@ua.edu' target='_blank' class='url'>bineet@ua.edu</a></p><ul><li><p><span>Please add the following in subject line if you are emailing regarding the course: </span><code>[f25-cs570] &lt;your-subject&gt;</code></p><ul><li><p><span>Note: Emails that do not adhere to this guideline may experience significant delays in response.</span></p></li></ul></li></ul></li><li><p><em><span>Office:</span></em><span> Cyber Hall 3053</span></p><ul><li><p><em><span>Office Hours:</span></em><span> Mon/Wed, 10:00 am - 11:00 am</span></p></li></ul></li><li><p><em><span>Instructor Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/'><span>bineet.cs.ua.edu</span></a></p></li></ul><h3 id='teaching-assistant'><span>Teaching Assistant</span></h3><p><strong><span>David Amebley</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:dkamebley@crimson.ua.edu' target='_blank' class='url'>dkamebley@crimson.ua.edu</a></p></li><li><p><em><span>Office Hours:</span></em><span> Tue/Thu, 10:00 am - 1:00 pm in CYB (Cyber Hall) 3046 </span></p></li></ul><h2 id='course-description'><span>Course Description</span></h2><p><span>This course will introduce students to the key concepts and techniques used to model, analyze, and reason about computational processes. Following are some of the broad topics that will be covered in this course:</span></p><ol start='' ><li><p><span>Analysis of Algorithms</span></p></li><li><p><span>Searching</span></p></li><li><p><span>Sorting</span></p></li><li><p><span>Graphs</span></p></li><li><p><span>Divide and Conquer</span></p></li><li><p><span>Greedy Algorithms</span></p></li><li><p><span>Dynamic Programming </span></p></li><li><p><span>Intractability</span></p></li></ol><h2 id='prerequisites'><span>Prerequisites</span></h2><ol start='' ><li><p><span>Algorithms (CS 201)</span></p></li><li><p><span>Data Structures and Analysis (eg., CS 201) </span></p></li><li><p><span>Discrete Structures (Or their equivalents).</span></p></li><li><p><span>Programming in Python (CS 223/323)</span></p></li><li><p><span>Mathematical Maturity</span></p><ul><li><p><span>Have you formally proved correctness of algorithms?</span></p></li><li><p><span>Are you familiar with proofs using induction?</span></p><ul><li><p><em><span>Test your knowledge of inductive proofs.</span></em><span> One can refer to basic inductive proofs (available online) and see how comfortable they are in understanding the proofs.</span></p></li></ul></li><li><p><span>Familiarity with theorems in graph theory would be useful</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ul></li></ol><p><strong><span>Speak to instructor, if unsure.</span></strong></p><h2 id='textbooks'><span>Textbooks</span></h2><p><span>Recommended textbooks:</span></p><ol start='' ><li><p><em><span>&quot;Algorithm Design&quot;</span></em><span>, by Jon Kleinberg, Eva Tardos </span><strong><span>(primary)</span></strong></p></li><li><p><em><span>&quot;Introduction to Algorithms&quot;</span></em><span>, by Thomas H Cormen, Charles E Leiserson, Ronald L Rivest, Clifford Stein</span></p></li></ol><h2 id='course-objectives'><span>Course Objectives</span></h2><p><span>By the end of this course students are expected to be able to:</span></p><ol start='' ><li><p><span>Understand and apply fundamental algorithm design paradigms.</span></p></li><li><p><span>Analyze algorithm performance using mathematical and empirical methods.</span></p></li><li><p><span>Prove algorithm correctness using formal reasoning.</span></p></li><li><p><span>Recognize and address computationally intractable problems.</span></p></li></ol><h2 id='student-learning-outcomes'><span>Student Learning Outcomes</span></h2><p><span>The students can test the above given objectives in the following way:</span></p><ol start='' ><li><p><span>Design and implement efficient algorithms in Python.</span></p></li><li><p><span>Analyze and compare algorithm efficiency using asymptotic notation.</span></p></li><li><p><span>Apply graph theory, dynamic programming, and greedy strategies to problem-solving.</span></p></li><li><p><span>Identify NP-hard problems and discuss their implications.</span></p></li></ol><h2 id='grading'><span>Grading </span></h2><ol start='' ><li><p><span>Assignments: 20%</span></p><ol start='' ><li><p><span>Must be typed (preferably in </span><code>LaTex</code><span>), and not handwritten. However hand-drawn figures (such as automata) are permitted.</span></p></li><li><p><span>Assignments will be clearly marked as graded/ungraded.</span></p></li><li><p><span>All submissions must follow this format: </span><code>&lt;firstname-lastname-CWID&gt;</code><span>.</span></p></li></ol></li><li><p><span>Quiz: 70%</span></p><ol start='' ><li><p><span>Quiz 1: 30%</span></p></li><li><p><span>Quiz 2: 40%</span></p></li></ol></li><li><p><span>Presentation (of topics/papers), and leading class discussion: 10%</span></p></li><li><p><span>Self Evaluation Test will be posted on the first day of classes (Aug 20) to test your pre-requisites. </span></p></li></ol><p><strong><span>Late work policy</span></strong></p><ul><li><p><strong><span>No late assignments will be accepted or graded.</span></strong><span> All deadlines are firm.</span></p><ul><li><p><span>Extensions will only be granted for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies (e.g., medical note, university verification), in strict accordance with University policy.</span></p></li></ul></li></ul><p><strong><span>Missed quiz policy</span></strong></p><ul><li><p><span>Make-up exams will </span><strong><span>not</span></strong><span> be offered, except for </span><strong><span>ODS-approved accommodations</span></strong><span> or documented emergencies.</span></p></li><li><p><span>In case of an emergency, the student must provide official documentation (e.g., medical note, university verification).</span></p></li><li><p><span>Failure to follow these guidelines will result in a score of zero for the missed exam.</span></p></li></ul><h2 id='attendance-and-participation'><span>Attendance and Participation</span></h2><ul><li><p><span>Though attendance will not be formally recorded, it is recommended the lectures are attended. </span></p></li><li><p><span>Students are responsible to make up for missed courseworks. </span></p></li></ul><h2 id='instructor-absence'><span>Instructor Absence</span></h2><p><span>On rare occasions, the instructor may be away from campus for professional commitments such as conferences, invited talks, or other academic obligations. During these instances, one of the following arrangements will be made:</span></p><ul><li><p><strong><span>Make-up Lecture:</span></strong><span> Scheduled on </span><strong><span>Thursday or Friday, 7:00–7:50 pm via Zoom</span></strong><span>. Attendance is optional, and a recording will be made available.</span></p></li><li><p><strong><span>In-class TA-led Session:</span></strong><span> The teaching assistant may cover course material or host an optional review session.</span></p></li><li><p><strong><span>In-class Practice Set:</span></strong><span> A set of sample practice questions will be provided and proctored by the TA. Attendance is optional, and will not be graded.</span></p></li></ul><p><em><strong><span>The instructor will provide advance notice of any such changes to the regular class schedule.</span></strong></em></p><h2 id='social-media-policy'><span>Social Media Policy</span></h2><p><span>In addition to official course announcements on Blackboard, the instructor will also post selected updates—such as important reminders, lecture highlights, and relevant resources—on the course’s social media channels:</span></p><ul><li><p><strong><span>Instagram:</span></strong><span> </span><a href='https://instagram.com/autmn_lab'><span>instagram.com/autmn_lab</span></a></p></li><li><p><strong><span>Facebook:</span></strong><span> </span><a href='https://facebook.com/autmn.lab'><span>facebook.com/autmn.lab</span></a></p></li></ul><p><span>Following these accounts is </span><strong><span>optional</span></strong><span> and not a substitute for regularly checking Blackboard. All critical information will be posted on Blackboard, and students are responsible for reviewing it in a timely manner.</span></p><p><strong><span>Communication Boundaries:</span></strong><span> Students should not send direct messages (DMs) to the instructor or TA via social media. All course-related communication must be conducted through </span><strong><span>University email</span></strong><span> using the guidelines provided above.</span></p><h2 id='disclaimer-notification-of-changes'><span>Disclaimer Notification of Changes</span></h2><p><span>The instructor will make every effort to follow the guidelines of this syllabus as listed; however, the instructor reserves the right to amend this document as the need arises (including project due dates and test dates). In such instances, the instructor will notify students in class and/or via email and will endeavor to provide reasonable time for students to adjust to any changes.</span></p><h2 id='standard-course-policies'><span>Standard Course Policies</span></h2><p><span>Please refer to the university&#39;s standard course policies (Honor code, misconduct, behavior etc.) for details.</span></p><h2 id='schedule'><span>Schedule</span></h2><p><strong><span>Please send me an email if you want the lecture slides</span></strong><span> (registered students can access the slides through Blackboard)</span></p><p><span>Daily updates are also posted on my lab&#39;s social media channels: </span><a href='https://www.instagram.com/autmn_lab'><span>[instagram/autmn_lab]</span></a><span>, </span><a href='https://www.facebook.com/autmn.lab'><span>[facebook/autmn.lab]</span></a><span> </span></p><ul><li><p><strong><span>Lecture 1, Aug 20, 2025</span></strong></p><ul><li><p><span>Introduction to the course</span></p></li><li><p><span>Syllabus and logistics</span></p></li><li><p><strong><span>Self Evaluation Test is posted in Blackboard</span></strong><span>. Deadline: 6:00 am, Aug 27, 2025. This assignment is to test your prerequisites.</span></p></li><li><p><span>What&#39;s this course about? </span></p><ul><li><p><span>Designing algorithms?</span></p><ul><li><p><span>But I already write codes that work pretty well and are fast enough!</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>Lecture 2, Aug 22, 2025</span></strong></p><ul><li><p><span>Formalizing school multiplication</span></p></li><li><p><span>Introduction to Stable Matching</span></p></li></ul></li><li><p><strong><span>Lecture 3, Aug 25, 2025</span></strong></p><ul><li><p><span>Stable Matching (contd.)</span></p></li></ul></li><li><p><strong><span>Lecture 4, Aug 27, 2025</span></strong></p><ul><li><p><em><span>Self evaluation test due today.</span></em></p></li><li><p><span>Stable Matching</span></p><ul><li><p><span>Uniqueness of stable matching </span></p></li><li><p><span>Unstable pairs</span></p></li></ul></li><li><p><span>Are all algorithms equally good?</span></p></li></ul></li><li><p><strong><span>Lecture 5, Aug 29, 2025</span></strong></p><ul><li><p><span>Are all algorithms equally good?</span></p><ul><li><p><span>Contrasting Linear and Binary Search</span></p></li></ul></li><li><p><span>Introduction to asymptotic analysis</span></p></li></ul></li><li><p><strong><span>No Classes, Sep 1, 2025</span></strong></p><ul><li><p><span>Labor Day</span></p></li></ul></li><li><p><strong><span>Lecture 6, Sep 3, 2025</span></strong></p><ul><li><p><span>Asymptotic complexities</span></p></li><li><p><span>How do you choose the input size?</span></p><ul><li><p><span>Arrays</span></p></li><li><p><span>Graphs</span></p></li><li><p><span>For </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-4-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-4-TEX-I-1D45B"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">n</script><span>, say for checking prime?</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 7, Sep 5, 2025</span></strong></p><ul><li><p><span>Basic operations, and complexities</span></p></li><li><p><span>Big O</span></p></li></ul></li><li><p><strong><span>Lecture 8,  Sep 8, 2025</span></strong></p><ul><li><p><span>Big O</span></p></li><li><p><span>Big </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.633ex" height="1.593ex" role="img" focusable="false" viewBox="0 -704 722 704" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-5-TEX-N-3A9" d="M55 454Q55 503 75 546T127 617T197 665T272 695T337 704H352Q396 704 404 703Q527 687 596 615T666 454Q666 392 635 330T559 200T499 83V80H543Q589 81 600 83T617 93Q622 102 629 135T636 172L637 177H677V175L660 89Q645 3 644 2V0H552H488Q461 0 456 3T451 20Q451 89 499 235T548 455Q548 512 530 555T483 622T424 656T361 668Q332 668 303 658T243 626T193 560T174 456Q174 380 222 233T270 20Q270 7 263 0H77V2Q76 3 61 89L44 175V177H84L85 172Q85 171 88 155T96 119T104 93Q109 86 120 84T178 80H222V83Q206 132 162 199T87 329T55 454Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="3A9" xlink:href="#MJX-5-TEX-N-3A9"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Ω</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">\Omega</script></p></li><li><p><span>Big </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 778 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-6-TEX-N-398" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM610 339Q610 428 590 495T535 598T463 651T384 668Q332 668 289 638T221 566Q168 485 168 339Q168 274 176 235Q189 158 228 105T324 28Q356 16 388 16Q415 16 442 24T501 54T555 111T594 205T610 339ZM223 263V422H263V388H514V422H554V263H514V297H263V263H223Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="398" xlink:href="#MJX-6-TEX-N-398"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Θ</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">\Theta</script></p></li><li><p><span>In-class exercises</span></p></li></ul></li><li><p><strong><span>Lecture 9. Sep 10, 2025</span></strong></p><ul><li><p><span>Analyzing complexities</span></p><ul><li><p><span>Iterative programs</span></p></li><li><p><span>Recursive programs</span></p></li></ul></li><li><p><span>Solving recurrence relations</span></p></li></ul></li><li><p><strong><span>Lecture 10, Sep 12, 2025</span></strong></p><ul><li><p><span>Selection sort</span></p><ul><li><p><span>Iterative version, and analysis</span></p></li><li><p><span>Recursive version, and analysis</span></p></li></ul></li><li><p><span>Insertion sort</span></p><ul><li><p><span>Iterative version</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 11, Sep 15, 2025</span></strong></p><ul><li><p><span>Insertion sort</span></p><ul><li><p><span>Recursive implementation, and analysis</span></p></li></ul></li><li><p><span>Merge sort</span></p><ul><li><p><span>Examples</span></p></li><li><p><span>Merge</span></p></li><li><p><span>Recursive implementation</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 12, Sep 17, 2025</span></strong></p><ul><li><p><span>Merge sort analysis</span></p></li><li><p><span>Quick sort</span></p><ul><li><p><span>Pivot</span></p></li><li><p><span>Examples</span></p></li><li><p><span>Recursive implementation</span></p></li><li><p><span>Analysis</span></p></li></ul></li><li><p><strong><span>Lecture 13, Sep 19, 2025</span></strong></p><ul><li><p><span>Quick sort analysis</span></p><ul><li><p><span>Worst case and recurrence relations</span></p></li></ul></li><li><p><span>Stable Sorting</span></p></li><li><p><span>Comparative analysis of sorting algorithms</span></p></li><li><p><span>Introduction to graphs and path finding</span></p></li></ul></li><li><p><strong><span>Lecture 14, Sep 22, 2025</span></strong></p><ul><li><p><span>Finding paths in graphs</span></p></li><li><p><span>BFS</span></p><ul><li><p><span>Illustration</span></p></li><li><p><span>Algorithm</span></p></li><li><p><span>Analysis</span></p><ul><li><p><span>General graphs</span></p></li><li><p><span>Sparse graphs</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 15, Sep 24, 2025</span></strong></p><ul><li><p><span>BFS</span></p><ul><li><p><span>Enhancements - Level and Paths</span></p></li><li><p><span>Complexity</span></p></li></ul></li><li><p><span>DFS</span></p><ul><li><p><span>Paths</span></p></li><li><p><span>Numbering</span></p></li><li><p><span>Complexity</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 16, Sep 26, 2025</span></strong></p><ul><li><p><strong><span>Tentative Important Dates</span></strong></p><ul><li><p><strong><span>Quiz 1:</span></strong><span> Oct. 15 – 31  </span></p></li><li><p><strong><span>Quiz 2:</span></strong><span> Dec. 3  </span></p></li><li><p><strong><span>Assignment 1:</span></strong><span> Posted ~2 weeks before Quiz 1  </span></p></li><li><p><strong><span>Assignment 2:</span></strong><span> Posted ~2 weeks before Quiz 2  </span></p></li><li><p><strong><span>Exact dates will be announced at least 2 weeks in advance</span></strong></p></li></ul></li><li><p><span>DFS Tree</span></p></li><li><p><span>DFS Numbering</span></p></li><li><p><span>Finding cycles</span></p><ul><li><p><span>Classifying edges using DFS numbers</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 17, Sep 29, 2025</span></strong></p><ul><li><p><span>Strongly connected components</span></p></li><li><p><span>Topological ordering</span></p></li></ul></li><li><p><strong><span>Lecture 18, Oct 1, 2026</span></strong></p><ul><li><p><strong><span>Announcements:</span></strong></p><ul><li><p><strong><span>Assignment 1: </span></strong><span>Will be posted soon</span></p></li></ul><ul><li><p><strong><span>Quiz 1</span></strong></p><ul><li><p><strong><span>Date:</span></strong><span> October 27, 2026  </span></p></li><li><p><strong><span>Coverage:</span></strong><span> Lectures 1–18  </span></p><ul><li><p><span>Topics: Analysis, Sorting, Graph Algorithms  </span></p></li></ul></li><li><p><strong><span>Format:</span></strong><span> Multiple Choice, Short Justification, Proof Arguments  </span></p></li></ul></li><li><p><strong><span>Reading Exercises</span></strong></p><ul><li><p><span>Included in today’s lecture slides (posted on Blackboard)</span></p></li></ul></li><li><p><strong><span>Lecture Hall Change (One Day Only)</span></strong></p><ul><li><p><strong><span>Date:</span></strong><span> October 17, 2026  </span></p></li><li><p><strong><span>Location:</span></strong><span> North Lawn Hall (NL) 1014  </span></p></li><li><p><em><span>Reason provided in lecture slides</span></em></p></li></ul></li></ul></li><li><p><span>Analysis using adjacency list and matrices</span></p></li><li><p><span>Topological sorting</span></p><ul><li><p><span>Analysis using adjacency list and matrices</span></p></li></ul></li><li><p><span>Longest path in DAG</span></p><ul><li><p><span>Analysis using adjacency list and matrices</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>Lecture 19, Oct. 3, 2025</span></strong></p><ul><li><p><span>Shortest Paths</span></p></li><li><p><span>Dijkstra&#39;s Algorithm</span></p><ul><li><p><span>Correctness</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 20, Oct. 6, 2025</span></strong></p><ul><li><p><strong><span>Assignment 1 posted</span></strong></p><ul><li><p><span>Deadline: 6am, Oct. 13, 2025 (no late submissions)</span></p></li></ul></li><li><p><span>Dijkstra&#39;s proof on negative edges</span></p></li><li><p><span>Shortest Paths on Negative edges</span></p><ul><li><p><span>Bellman-Ford&#39;s Algorithm</span><span>	</span></p><ul><li><p><span>Correctness</span></p></li><li><p><span>Complexity</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 21, Oct. 8, 2025</span></strong></p><ul><li><p><span>All pair shortest path</span></p></li><li><p><span>Floyd-Warshall Algorithm</span></p><ul><li><p><span>Complexity analysis</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 22, Oct. 10, 2025</span></strong></p><ul><li><p><span>Warshall&#39;s Algorithm</span></p></li><li><p><span>Introduction to Spanning Trees:</span></p><ul><li><p><span>Prim&#39;s</span></p></li><li><p><span>Kruskal&#39;s</span></p></li></ul></li><li><p><span>Prim&#39;s Algorithm</span></p><ul><li><p><span>Example</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 23, Oct. 13, 2025</span></strong></p><ul><li><p><strong><span>Announcements:</span></strong></p><ul><li><p><strong><span>Topics posted on Blackboard</span></strong></p></li><li><p><strong><span>Form groups</span></strong><span> of 4–5 students (CS 470 &amp; CS 570 may mix)</span></p></li><li><p><strong><span>Send one email</span></strong><span> (by any group member) with subject line:</span>
-<code>[f25-cs570] Group</code></p></li><li><p><span>Include:</span></p><ul><li><p><span>All group members’ names</span></p></li><li><p><span>Top </span><strong><span>3 topic choices</span></strong><span> (ranked)</span></p></li></ul></li><li><p><strong><span>Deadline:</span></strong><span> 6:00 AM, Oct. 20</span></p></li><li><p><strong><span>No extensions</span></strong><span>; late groups will be assigned randomly with a </span><strong><span>10% deduction</span></strong></p></li></ul></li><li><p><span>Kruskal&#39; Algorithm</span></p><ul><li><p><span>Analysis</span></p></li><li><p><span>Bottleneck</span></p></li></ul></li><li><p><span>Union-Find Data Structure</span></p></li></ul></li><li><p><strong><span>Lecture 24, Oct. 15, 2025</span></strong></p><ul><li><p><span>Announcements:</span></p><ul><li><p><span>Lecture hall change for next class (Oct. 17) - NL 1014</span></p></li><li><p><span>Reminder: Student Presentation Topics and Groups</span></p></li></ul></li><li><p><span>Union Find Data structure</span></p><ul><li><p><span>Using arrays</span></p></li><li><p><span>Using arrays and pointers</span></p></li><li><p><span>Analysis</span></p></li></ul></li><li><p><span>Priority queues</span></p><ul><li><p><span>Job scheduling</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 25, Oct. 17, 2025</span></strong></p><ul><li><p><span>Master Theorem</span></p></li><li><p><span>Grade School Integer Multiplication</span></p><ul><li><p><span>Divide and Conquer approach </span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 26, Oct. 20, 2025</span></strong></p><ul><li><p><strong><span>Announcements</span></strong></p><ul><li><p><strong><span>Quiz 1</span></strong></p><ul><li><p><span>No electronic devices or notes allowed</span></p></li><li><p><span>One cheat sheet (single page, letter size) permitted</span></p></li><li><p><span>Answer in provided booklet; use pen</span></p></li></ul></li><li><p><strong><span>Assignment 1 grades posted</span></strong></p><ul><li><p><span>Great job: 90+ Needs improvement: 60 or below</span></p></li><li><p><span>View graded sheet during TA office hours (Tue/Thu, 10 am – 1 pm, CYB 3046)</span></p></li></ul></li><li><p><strong><span>Important Dates</span></strong></p><ul><li><p><span>Student Presentation Slides Due: </span><strong><span>Nov 3, 6 am</span></strong></p></li><li><p><span>Presentations: </span><strong><span>Nov 3 – Dec 1</span></strong></p></li><li><p><strong><span>Quiz 2:</span></strong><span> Dec 3 (same format as Quiz 1, Lectures 1–30)</span></p></li><li><p><strong><span>Assignment 2</span></strong><span> to be posted about 2 weeks before Quiz 2</span></p></li></ul></li></ul></li><li><p><span>Karatsuba&#39;s Algorithm</span></p><ul><li><p><span>Analysis</span></p></li></ul></li><li><p><span>Strassen&#39;s Algorithm</span></p></li></ul></li><li><p><strong><span>Lecture 27,  Oct. 22, 2025</span></strong></p><ul><li><p><strong><span>Announcements</span></strong></p><ul><li><p><strong><span>Presentation Slides Due:</span></strong><span> 6:00 AM, Nov. 3 (Upload individually on Blackboard)</span></p></li></ul><ul><li><p><strong><span>Presentation Dates:</span></strong><span> Nov. 3 – Dec. 3 (</span><strong><span>not Dec. 1</span></strong><span>)</span></p></li><li><p><strong><span>Quiz 2:</span></strong><span> Dec. 5 (</span><strong><span>not Dec. 3</span></strong><span>) — Same format as Quiz 1, Lectures 1–30</span></p></li><li><p><strong><span>Assignment 2:</span></strong><span> Will be posted ~2 weeks before Quiz 2</span></p></li><li><p><strong><span>Late/missed presentation:</span></strong><span> 50% grade deduction or 0 points if absent</span></p></li><li><p><strong><span>Arrive early &amp; set up laptop before presenting</span></strong></p></li></ul></li><li><p><span>Dynamic Programming</span></p></li><li><p><span>Weighted Interval Scheduling</span></p></li><li><p><span>Memoization</span></p></li></ul></li><li><p><strong><span>Lecture 28, Oct. 24, 2025</span></strong></p><ul><li><p><span>Classifying problems according to complexities</span></p></li><li><p><span>P vs. NP</span></p></li><li><p><span>Polytime reductions</span></p><ul><li><p><span>Independent Set</span></p></li><li><p><span>Vertex cover, </span></p></li><li><p><span>Set Cover</span></p></li><li><p><span>3-SAT</span></p></li></ul></li><li><p><strong><span>Quiz 1, Oct. 27, 2025</span></strong></p><ul><li><p><span>In-class, 9-9:50am</span></p></li><li><p><span>Coverage: Lectures. 1-18</span></p><ul><li><p><span>Topics: Analysis, Sorting, Graph Algorithms  </span></p></li><li><p><strong><span>Format:</span></strong><span> (Same as assignment 1) Multiple Choice, Short Justification, Proof Arguments</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 27, Oct. 29, 2025</span></strong></p><ul><li><p><span>Flow Networks</span></p></li><li><p><span>Max Flow, Min Cut</span></p></li><li><p><span>Greedy solution</span></p></li><li><p><span>Ford-Fulkerson&#39;s Algorithm</span></p></li></ul></li><li><p><strong><span>No Classes, Oct. 31, 2025</span></strong></p><ul><li><p><span>Mid-Semester Study Break - Classes Dismissed</span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 3, 2025</span></strong></p><ul><li><p><span>Group 22 -  </span><em><span>The Metropolis Algorithm and Simulated Annealing</span></em></p></li><li><p><span>Group 18 - </span><em><span>Fibonacci Heaps</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 5, 2025</span></strong></p><ul><li><p><span>Group 20 - </span><em><span>Multithreaded Merge Sort</span></em><span> </span></p></li><li><p><span>Group 19 - </span><em><span>Fibonacci Heaps</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 7, 2025</span></strong></p><ul><li><p><span>Group 21 - </span><em><span>van Emde Boas Trees</span></em></p></li><li><p><span>Group 17 - </span><em><span>Huffman Codes</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 10, 2025</span></strong></p><ul><li><p><span>Groups: 16, 15</span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 12, 2025</span></strong></p><ul><li><p><span>Groups: 14, 13</span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 14, 2025</span></strong></p><ul><li><p><span>Groups: 12, 11</span></p></li></ul></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+<code>[f25-cs570] Group</code></p></li><li><p><span>Include:</span></p><ul><li><p><span>All group members’ names</span></p></li><li><p><span>Top </span><strong><span>3 topic choices</span></strong><span> (ranked)</span></p></li></ul></li><li><p><strong><span>Deadline:</span></strong><span> 6:00 AM, Oct. 20</span></p></li><li><p><strong><span>No extensions</span></strong><span>; late groups will be assigned randomly with a </span><strong><span>10% deduction</span></strong></p></li></ul></li><li><p><span>Kruskal&#39; Algorithm</span></p><ul><li><p><span>Analysis</span></p></li><li><p><span>Bottleneck</span></p></li></ul></li><li><p><span>Union-Find Data Structure</span></p></li></ul></li><li><p><strong><span>Lecture 24, Oct. 15, 2025</span></strong></p><ul><li><p><span>Announcements:</span></p><ul><li><p><span>Lecture hall change for next class (Oct. 17) - NL 1014</span></p></li><li><p><span>Reminder: Student Presentation Topics and Groups</span></p></li></ul></li><li><p><span>Union Find Data structure</span></p><ul><li><p><span>Using arrays</span></p></li><li><p><span>Using arrays and pointers</span></p></li><li><p><span>Analysis</span></p></li></ul></li><li><p><span>Priority queues</span></p><ul><li><p><span>Job scheduling</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 25, Oct. 17, 2025</span></strong></p><ul><li><p><span>Master Theorem</span></p></li><li><p><span>Grade School Integer Multiplication</span></p><ul><li><p><span>Divide and Conquer approach </span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 26, Oct. 20, 2025</span></strong></p><ul><li><p><strong><span>Announcements</span></strong></p><ul><li><p><strong><span>Quiz 1</span></strong></p><ul><li><p><span>No electronic devices or notes allowed</span></p></li><li><p><span>One cheat sheet (single page, letter size) permitted</span></p></li><li><p><span>Answer in provided booklet; use pen</span></p></li></ul></li><li><p><strong><span>Assignment 1 grades posted</span></strong></p><ul><li><p><span>Great job: 90+ Needs improvement: 60 or below</span></p></li><li><p><span>View graded sheet during TA office hours (Tue/Thu, 10 am – 1 pm, CYB 3046)</span></p></li></ul></li><li><p><strong><span>Important Dates</span></strong></p><ul><li><p><span>Student Presentation Slides Due: </span><strong><span>Nov 3, 6 am</span></strong></p></li><li><p><span>Presentations: </span><strong><span>Nov 3 – Dec 1</span></strong></p></li><li><p><strong><span>Quiz 2:</span></strong><span> Dec 3 (same format as Quiz 1, Lectures 1–30)</span></p></li><li><p><strong><span>Assignment 2</span></strong><span> to be posted about 2 weeks before Quiz 2</span></p></li></ul></li></ul></li><li><p><span>Karatsuba&#39;s Algorithm</span></p><ul><li><p><span>Analysis</span></p></li></ul></li><li><p><span>Strassen&#39;s Algorithm</span></p></li></ul></li><li><p><strong><span>Lecture 27,  Oct. 22, 2025</span></strong></p><ul><li><p><strong><span>Announcements</span></strong></p><ul><li><p><strong><span>Presentation Slides Due:</span></strong><span> 6:00 AM, Nov. 3 (Upload individually on Blackboard)</span></p></li></ul><ul><li><p><strong><span>Presentation Dates:</span></strong><span> Nov. 3 – Dec. 3 (</span><strong><span>not Dec. 1</span></strong><span>)</span></p></li><li><p><strong><span>Quiz 2:</span></strong><span> Dec. 5 (</span><strong><span>not Dec. 3</span></strong><span>) — Same format as Quiz 1, Lectures 1–30</span></p></li><li><p><strong><span>Assignment 2:</span></strong><span> Will be posted ~2 weeks before Quiz 2</span></p></li><li><p><strong><span>Late/missed presentation:</span></strong><span> 50% grade deduction or 0 points if absent</span></p></li><li><p><strong><span>Arrive early &amp; set up laptop before presenting</span></strong></p></li></ul></li><li><p><span>Dynamic Programming</span></p></li><li><p><span>Weighted Interval Scheduling</span></p></li><li><p><span>Memoization</span></p></li></ul></li><li><p><strong><span>Lecture 28, Oct. 24, 2025</span></strong></p><ul><li><p><span>Classifying problems according to complexities</span></p></li><li><p><span>P vs. NP</span></p></li><li><p><span>Polytime reductions</span></p><ul><li><p><span>Independent Set</span></p></li><li><p><span>Vertex cover, </span></p></li><li><p><span>Set Cover</span></p></li><li><p><span>3-SAT</span></p></li></ul></li><li><p><strong><span>Quiz 1, Oct. 27, 2025</span></strong></p><ul><li><p><span>In-class, 9-9:50am</span></p></li><li><p><span>Coverage: Lectures. 1-18</span></p><ul><li><p><span>Topics: Analysis, Sorting, Graph Algorithms  </span></p></li><li><p><strong><span>Format:</span></strong><span> (Same as assignment 1) Multiple Choice, Short Justification, Proof Arguments</span></p></li></ul></li></ul></li><li><p><strong><span>Lecture 27, Oct. 29, 2025</span></strong></p><ul><li><p><span>Flow Networks</span></p></li><li><p><span>Max Flow, Min Cut</span></p></li><li><p><span>Greedy solution</span></p></li><li><p><span>Ford-Fulkerson&#39;s Algorithm</span></p></li></ul></li><li><p><strong><span>No Classes, Oct. 31, 2025</span></strong></p><ul><li><p><span>Mid-Semester Study Break - Classes Dismissed</span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 3, 2025</span></strong></p><ul><li><p><span>Group 22 -  </span><em><span>The Metropolis Algorithm and Simulated Annealing</span></em></p></li><li><p><span>Group 18 - </span><em><span>Fibonacci Heaps</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 5, 2025</span></strong></p><ul><li><p><span>Group 20 - </span><em><span>Multithreaded Merge Sort</span></em><span> </span></p></li><li><p><span>Group 19 - </span><em><span>Fibonacci Heaps</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 7, 2025</span></strong></p><ul><li><p><span>Group 21 - </span><em><span>van Emde Boas Trees</span></em></p></li><li><p><span>Group 17 - </span><em><span>Huffman Codes</span></em></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 10, 2025</span></strong></p><ul><li><p><span>Group 16 - </span><em><span>Multithreaded Merge Sort</span></em><span> </span></p></li><li><p><span>Group 15 - </span><em><span>Multithreaded Merge Sort</span></em><span> </span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 12, 2025</span></strong></p><ul><li><p><span>Groups: 14, 13</span></p></li></ul></li><li><p><strong><span>Student Presentations, Nov. 14, 2025</span></strong></p><ul><li><p><span>Groups: 12, 11</span></p></li></ul></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
 </body>
 </html>
