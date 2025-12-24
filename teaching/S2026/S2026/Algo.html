@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-theme_css">html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+
+@media print {
+	ol {
+		padding-left: 40px;
+	}
+}
+
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>Algo_Webpage</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='algorithms'><span>Algorithms</span></h1><h2 id='general-course-information'><span>General Course Information</span></h2><ul><li><p><em><span>Term:</span></em><span> Spring 2026</span></p></li><li><p><em><span>Department</span></em><span>: COMP</span></p></li><li><p><em><span>Course Number:</span></em><span> 570</span></p></li><li><p><em><span>Time:</span></em><span> Mon/Wed/Fri, 12:00 - 12:50 pm (Jan 07, 2026 - Apr 24, 2026)</span></p></li><li><p><em><span>Location</span></em><span>: SERC (South Engineering Research Ctr) 2039</span></p></li><li><p><em><span>Course Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/teaching/S2026/CS570/Algo.html'><span>bineet.cs.ua.edu/teaching/S2026/CS570/Algo.html</span></a></p></li></ul><h2 id='instructor'><span>Instructor </span></h2><p><strong><span>Dr. Bineet Ghosh</span></strong></p><ul><li><p><em><span>Email:</span></em><span> </span><a href='mailto:bineet@ua.edu' target='_blank' class='url'>bineet@ua.edu</a></p><ul><li><p><span>Please add the following in subject line if you are emailing regarding the course: </span><code>[s26-algo] &lt;your-subject&gt;</code></p><ul><li><p><span>Emails are typically monitored on Weekdays between 8am - 2pm.</span></p></li></ul></li></ul></li><li><p><em><span>Office:</span></em><span> Cyber Hall 3053</span></p><ul><li><p><em><span>Office Hours:</span></em><span> Mon/Wed, 10-11am</span></p></li></ul></li><li><p><em><span>Instructor Webpage:</span></em><span> </span><a href='https://bineet.cs.ua.edu/'><span>bineet.cs.ua.edu</span></a></p></li></ul><h2 id='course-description'><span>Course Description</span></h2><p><span>This course will introduce students to the key concepts and techniques used to model, analyze, and reason about computational processes. Following are some of the broad topics that will be covered in this course:</span></p><ol start='' ><li><p><span>Analysis of Algorithms</span></p></li><li><p><span>Revisit: Searching, Sorting</span></p></li><li><p><span>Graph Algorithms</span></p></li><li><p><span>Divide and Conquer</span></p></li><li><p><span>Greedy Algorithms</span></p></li><li><p><span>Dynamic Programming </span></p></li><li><p><span>Linear Programming </span></p></li><li><p><span>Flow</span></p></li><li><p><span>Intractability</span></p></li></ol><h2 id='prerequisites'><span>Prerequisites</span></h2><ol start='' ><li><p><span>Algorithms (CS 201)</span></p></li><li><p><span>Data Structures and Analysis (eg., CS 201) </span></p></li><li><p><span>Discrete Structures (Or their equivalents).</span></p></li><li><p><span>Programming in Python (CS 223/323)</span></p></li><li><p><span>Mathematical Maturity</span></p><ul><li><p><span>Have you formally proved correctness of algorithms?</span></p></li><li><p><span>Are you familiar with proofs using induction?</span></p><ul><li><p><em><span>Test your knowledge of inductive proofs.</span></em><span> One can refer to basic inductive proofs (available online) and see how comfortable they are in understanding the proofs.</span></p></li></ul></li><li><p><span>Familiarity with theorems in graph theory would be useful</span></p></li></ul></li></ol><p><strong><span>Speak to instructor, if unsure.</span></strong></p><h2 id='textbooks'><span>Textbooks</span></h2><p><span>Recommended textbooks:</span></p><ol start='' ><li><p><em><span>&quot;Algorithm Design&quot;</span></em><span>, by Jon Kleinberg, Eva Tardos </span><strong><span>(primary)</span></strong></p></li><li><p><em><span>&quot;Introduction to Algorithms&quot;</span></em><span>, by Thomas H Cormen, Charles E Leiserson, Ronald L Rivest, Clifford Stein</span></p></li></ol><h2 id='course-objectives'><span>Course Objectives</span></h2><p><span>By the end of this course students are expected to be able to:</span></p><ol start='' ><li><p><span>Understand and apply fundamental algorithm design paradigms.</span></p></li><li><p><span>Analyze algorithm performance using mathematical and empirical methods.</span></p></li><li><p><span>Prove algorithm correctness using formal reasoning.</span></p></li><li><p><span>Recognize and address computationally intractable problems.</span></p></li></ol><h2 id='student-learning-outcomes'><span>Student Learning Outcomes</span></h2><p><span>The students can test the above given objectives in the following way:</span></p><ol start='' ><li><p><span>Design and implement efficient algorithms in Python.</span></p></li><li><p><span>Analyze and compare algorithm efficiency using asymptotic notation.</span></p></li><li><p><span>Apply graph theory, dynamic programming, and greedy strategies to problem-solving.</span></p></li><li><p><span>Identify NP-hard problems and discuss their implications.</span></p></li></ol><h2 id='grading'><span>Grading </span></h2><ol start='' ><li><p><span>Assignments (Graded + Ungraded): 30%</span></p><ol><li><p><span>Must be typed (preferably in </span><code>LaTex</code><span>), and not handwritten. </span></p></li><li><p><span>Assignments will be clearly marked as graded/ungraded.</span></p></li><li><p><span>Submission of ungraded assignments is mandatory. Failure to comply will substantially affect the class participation score.</span></p></li><li><p><span>All submissions must follow this format: </span><code>&lt;firstname-lastname-CWID&gt;</code><span>.</span></p></li></ol></li><li><p><span>Quiz (Graded + Ungraded): 20%</span></p><ol><li><p><span>Quiz 1: 10% (in-class)</span></p></li><li><p><span>Quiz 2: 10% (during finals week - April 30, 2026)</span></p></li><li><p><span>There will be some ungraded in-class practice quiz (announced in advance - appx 1 week)</span></p></li></ol></li><li><p><span>Presentation (of topics/papers), and leading class discussion: 15%</span></p></li><li><p><span>Final project (with presentation): 30%</span></p></li><li><p><span>Class participation &amp; student’s growth: 5% </span></p></li><li><p><span>Final grades will be curved. No grade projections will be done.</span></p></li></ol><p><strong><span>Student’s growth.</span></strong><span> Identifies the effort being made by a student to understand the concepts being taught, despite their prior backgrounds. In other words, this can be used identify the efforts being put in by a student even if it is not being reflected in their scores. Completing the ungraded assignments is an excellent way to showcase this.</span></p><p><strong><span>Late work policy</span></strong></p><ul><li><p><strong><span>No late assignments will be accepted or graded.</span></strong><span> All deadlines are firm.</span></p><ul><li><p><span>Extensions will only be granted for </span><strong><span>ODS-approved accommodations</span></strong><span>.</span></p></li></ul></li><li><p><span>Students facing unforeseen circumstances are encouraged to communicate with the instructor </span><strong><span>before</span></strong><span> the deadline.</span></p></li></ul><p><strong><span>Missed quiz policy</span></strong></p><ul><li><p><span>Make-up exams/quiz will </span><strong><span>not</span></strong><span> be offered, except for </span><strong><span>ODS-approved accommodations</span></strong><span>.</span></p></li><li><p><span>Students facing unforeseen circumstances are encouraged to communicate with the instructor </span><strong><span>before</span></strong><span> the deadline when possible.</span></p></li></ul><p><strong><span>Final project</span></strong></p><ul><li><p><strong><span>Types</span></strong></p><ul><li><p><strong><span>Survey.</span></strong><span> Extensive survey about the research on a topic of your interest. Not a reading and copy-paste of existing papers. Expected to identify the core of the problem and provide deep insights.</span></p></li><li><p><strong><span>Applications.</span></strong><span> Pick an application of your interest and verifying it. Might require deploying several techniques and tools. Might lead to interesting theoretical results. The application should be nontrivial and “interesting” enough.</span></p></li><li><p><strong><span>Theory.</span></strong><span> Identify a theoretical problem (algorithm/property of models) and develop new fundamental solutions. Fairly challenging task. Identifying a “good” candidate solution or proving an “interesting” property suffices.</span></p></li><li><p><strong><span>Instructor Selected.</span></strong><span> More details will be discussed during class. Please note that these projects may be significantly more involved than other assignments and may span a large portion of the course. They are research-oriented in nature and will engage students throughout the semester, with the potential to develop into publishable work.</span></p></li></ul></li><li><p><strong><span>Logistics</span></strong></p><ul><li><p><span>Each group member is responsible to </span><em><span>clearly</span></em><span> identify their contribution.</span></p></li><li><p><span>1-2 reports maybe due before the final report and presentation to share progress with the class.</span></p></li><li><p><em><span>Presentation:</span></em><span> 15 mins, including discussion, debate, comparative analysis.</span></p><ul><li><p><span>Following elements should be a part of your presentation:</span></p><ul><li><p><span>Problem statement</span></p></li><li><p><span>Related work</span></p></li><li><p><span>Methodology</span></p></li><li><p><span>Main novelty</span></p></li><li><p><span>Results. Identify the interesting parts (your opinion)</span></p></li><li><p><span>Have at least two questions for the class. For each question, students will form groups to discuss, and then one member of each group will volunteer to answer the question.</span></p></li></ul></li></ul></li><li><p><em><span>Report:</span></em><span> 8 page document in IEEE conference format (similar to conference paper).</span></p></li><li><p><em><span>Guaranteed way to score A+:</span></em><span> Project report of conference paper quality.</span></p></li></ul></li></ul><h2 id='attendance-and-participation'><span>Attendance and Participation</span></h2><ul><li><p><span>Though attendance will not be formally recorded, it is recommended the lectures are attended. </span></p></li><li><p><span>Students are responsible to make up for missed courseworks. </span></p></li></ul><h2 id='instructor-absence'><span>Instructor Absence</span></h2><p><span>On rare occasions, the instructor may be away from campus for professional commitments such as conferences, invited talks, or other academic obligations. During these instances, one of the following arrangements will be made:</span></p><ul><li><p><strong><span>Make-up Lecture:</span></strong><span> Scheduled on </span><strong><span>Thursday or Friday, 7:00–7:50 pm via Zoom</span></strong><span>. Attendance is optional, and a recording will be made available.</span></p></li><li><p><strong><span>Practice Set:</span></strong><span> A set of sample practice questions will be provided and will not be graded. These may include self-proctored problem sets (completed individually or in groups) as well as coding sessions, which can be particularly helpful for technical interview preparation.</span></p></li></ul><p><em><strong><span>The instructor will provide advance notice of any such changes to the regular class schedule.</span></strong></em></p><h2 id='social-media-policy'><span>Social Media Policy</span></h2><p><span>In addition to official course announcements on Blackboard, the instructor will also post selected updates—such as important reminders, lecture highlights, and relevant resources—on the course’s social media channels:</span></p><ul><li><p><strong><span>Instagram:</span></strong><span> </span><a href='https://instagram.com/autmn_lab'><span>instagram.com/autmn_lab</span></a></p></li><li><p><strong><span>Facebook:</span></strong><span> </span><a href='https://facebook.com/autmn.lab'><span>facebook.com/autmn.lab</span></a></p></li></ul><p><span>Following these accounts is </span><strong><span>optional</span></strong><span> and not a substitute for regularly checking Blackboard. All critical information will be posted on Blackboard, and students are responsible for reviewing it in a timely manner.</span></p><p><strong><span>Communication Boundaries:</span></strong><span> Students should not send direct messages (DMs) to the instructor or TA via social media. All course-related communication must be conducted through </span><strong><span>University email</span></strong><span> using the guidelines provided above.</span></p><h2 id='disclaimer-notification-of-changes'><span>Disclaimer Notification of Changes</span></h2><p><span>The instructor will make every effort to follow the guidelines of this syllabus as listed; however, the instructor reserves the right to amend this document as the need arises (including project due dates and test dates). In such instances, the instructor will notify students in class and/or via email and will endeavor to provide reasonable time for students to adjust to any changes.</span></p><h2 id='standard-course-policies'><span>Standard Course Policies</span></h2><p><span>Please refer to the university&#39;s standard course policies (Honor code, misconduct, behavior etc.) for details.</span></p><p>&nbsp;</p><h2 id='schedule'><span>Schedule</span></h2><p><strong><span>No Classes (as per UA schedule): </span></strong><span> </span><em><span>Jan 19, Mar 16, Mar 18, Mar 20, Apr 3</span></em><span>.</span></p><ul><li><p><strong><span>Practice Set, Jan 7, 2026</span></strong></p><ul><li><p><span>Ungraded practice set to self-evaluate the prerequisites</span></p></li></ul></li><li><p><strong><span>Lecture 1, Jan 9, 2026</span></strong></p><ul><li><p><span>Syllabus &amp; Logistics</span></p></li><li><p><span>Instructor selected projects and potential for a publication</span></p></li><li><p><span>An assignment on Syllabus is posted (ungraded)</span></p><ul><li><p><em><span>This is just to make sure everyone reads the syllabus</span></em></p></li></ul></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
