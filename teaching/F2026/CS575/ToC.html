@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Construction</title>
+  <style>
+    :root {
+      --carolina-blue: #4B9CD3;
+      --carolina-blue-dark: #1F5F8B;
+      --navy-text: #17324D;
+      --soft-blue: #EAF5FC;
+      --white: #FFFFFF;
+      --muted: #5F7182;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy-text);
+      background:
+        linear-gradient(135deg, rgba(75, 156, 211, 0.13), rgba(255, 255, 255, 0.95)),
+        var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .page {
+      width: min(860px, 100%);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(75, 156, 211, 0.35);
+      border-radius: 22px;
+      box-shadow: 0 22px 60px rgba(23, 50, 77, 0.12);
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 10px;
+      background: linear-gradient(90deg, var(--carolina-blue), var(--carolina-blue-dark));
+    }
+
+    .content {
+      padding: 58px 54px 52px;
+      text-align: center;
+    }
+
+    .seal {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      margin: 0 auto 28px;
+      background: var(--soft-blue);
+      border: 2px solid rgba(75, 156, 211, 0.55);
+      display: grid;
+      place-items: center;
+      color: var(--carolina-blue-dark);
+      font-size: 34px;
+      font-weight: bold;
+      font-family: "Times New Roman", Georgia, serif;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+      color: var(--carolina-blue-dark);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      max-width: 610px;
+      margin: 0 auto;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .rule {
+      width: 86px;
+      height: 3px;
+      background: var(--carolina-blue);
+      border-radius: 999px;
+      margin: 30px auto 28px;
+    }
+
+    .note {
+      display: inline-block;
+      margin-top: 34px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--soft-blue);
+      color: var(--carolina-blue-dark);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    footer {
+      padding: 20px 28px;
+      border-top: 1px solid rgba(75, 156, 211, 0.2);
+      background: rgba(234, 245, 252, 0.52);
+      text-align: center;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px;
+      }
+
+      .content {
+        padding: 44px 26px 40px;
+      }
+
+      .seal {
+        width: 68px;
+        height: 68px;
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Under construction page">
+    <div class="topbar"></div>
+
+    <section class="content">
+      <h1>Under Construction</h1>
+      <div class="rule"></div>
+      <p class="subtitle">
+        This page is being prepared and will be available soon.
+      </p>
+      <div class="note">Bineet Ghosh</div>
+    </section>
+  </main>
+</body>
+</html>
